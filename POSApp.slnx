@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="POSApp/POSApp.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="Repository/Repository.csproj" />
+  <Project Path="Service/Service.csproj" />
+</Solution>

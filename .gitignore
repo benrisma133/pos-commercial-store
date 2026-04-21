@@ -1,0 +1,31 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MAUI specific
+*.apk
+*.aab
+*.ipa
+
+# Logs
+*.log
+
+# NuGet
+packages/
+*.nupkg
+
+# Secrets
+appsettings.Development.json
