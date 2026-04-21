@@ -1,66 +1,121 @@
-# POS Commercial Store
+# 🛒 POS Commercial Store
 
-A simple and clean Point of Sale (POS) system designed for managing a small to medium commercial store.
+A clean and simple Point of Sale (POS) system designed for managing a small to medium commercial store.
 
-This project focuses on database design and backend structure for handling real-world retail operations.
+This project is built for learning and real-world practice of database design, layered architecture, and POS workflows.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/benrisma133/pos-commercial-store.git
+```
+
+### 2. Open the project
+
+Open the solution file in Visual Studio:
+
+```
+POSApp.slnx
+```
+
+### 3. Run the application
+
+- Restore NuGet packages
+- Build the solution
+- Run the .NET MAUI application
+
+---
+
+## 🧱 Architecture
+
+The project follows a simple **3-Tier Architecture**:
+
+```
+UI Layer        → POSApp (.NET MAUI)
+Business Layer  → Service
+Data Layer      → Repository
+```
+
+Each layer is independent to ensure:
+
+- ✅ Clean separation of concerns
+- ✅ Easy maintenance
+- ✅ Scalability
 
 ---
 
 ## 📊 Features
 
-- Product management with categories
-- Customer management (optional for walk-in sales)
-- Sales transactions with multiple items
-- Stock movement tracking (IN / OUT / ADJUST)
-- Historical data preservation for sales accuracy
+- 🏷️ Product management with categories
+- 👤 Customer management *(optional for walk-in sales)*
+- 🛒 Sales transactions with multiple items (cart system)
+- 📦 Stock movement tracking **(IN / OUT / ADJUST)**
+- 🕓 Full sales history preservation
+- 🔄 Real-time inventory updates
 
 ---
 
-## 🗂 Database Structure
+## 🗂 Database Design
 
 ### Main Tables
 
-- Categories → Organize products
-- Products → Store inventory items
-- Customers → Optional customer tracking
-- Sales → Main transactions
-- SaleItems → Items inside each sale
-- StockMovements → Track stock changes
+| Table | Description |
+|---|---|
+| `Categories` | Organize products into groups |
+| `Products` | Store inventory items |
+| `Customers` | Optional customer tracking |
+| `Sales` | Main transactions (header) |
+| `SaleItems` | Items inside each sale (details) |
+| `StockMovements` | Track all stock changes |
+
+### 🔗 Relationships
+
+- One **Category** → Many **Products**
+- One **Sale** → Many **SaleItems**
+- One **Product** → Many **SaleItems**
+- One **Product** → Many **StockMovements**
+- Optional **Customer** → Many **Sales**
 
 ---
 
-## 🔗 Relationships
+## 🧠 Business Rules
 
-- One Category → Many Products
-- One Sale → Many SaleItems
-- One Product → Many SaleItems
-- One Product → Many StockMovements
-- Optional Customer → Many Sales
-
----
-
-## 🧠 Design Rules
-
-- Prices and quantities are always >= 0
-- Sales history is preserved even if products change
-- Foreign keys ensure data integrity
-- Stock movements provide full audit trail
+- Prices and quantities are always **≥ 0**
+- Stock **cannot go below zero**
+- Sales are **immutable** (history preserved)
+- Product snapshot *(name & price)* is stored in sales
+- Foreign keys ensure **data integrity**
+- Stock movements provide a **full audit trail**
 
 ---
 
-## 🛠 Tech
+## 🛠 Tech Stack
 
-- SQLite (or any relational database)
-- Designed for .NET / MAUI / desktop POS systems
-
----
-
-## 🚀 Purpose
-
-This project is intended for learning, prototyping, and building real POS systems for commercial stores.
+| Technology | Role |
+|---|---|
+| .NET MAUI | Cross-platform UI |
+| C# (.NET 8+) | Core language |
+| SQLite | Database |
+| 3-Tier Architecture | Design pattern |
 
 ---
 
-## 📌 Author
+## 🎯 Purpose
 
-Ismail Benrahhal
+This project is intended for:
+
+- 📚 Learning real-world software architecture
+- 🛠️ Practicing POS system development
+- 🏪 Building scalable commercial store systems
+- 🚀 Preparing for production-level applications
+
+---
+
+## 📌 Repository Info
+
+- **GitHub:** [pos-commercial-store](https://github.com/benrisma133/pos-commercial-store)
+- **Author:** Ismail Benrahhal
