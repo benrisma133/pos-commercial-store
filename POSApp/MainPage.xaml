@@ -14,7 +14,8 @@
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
             <Label
-                Text="Hello, World!"
+                x:Name="lblResult"
+                Text="&#xE8B6;"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
