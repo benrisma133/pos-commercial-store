@@ -2,7 +2,10 @@
 {
     public static class clsDataAccessSettings
     {
-        public static string ConnectionString =
-            $"Data Source={Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "CommercialStorePOS.db")};";
+        public static string ConnectionString =>
+            $"Data Source={DbPath};";
+
+        public static string DbPath =>
+            Path.Combine(FileSystem.AppDataDirectory, "Data", "CommercialStorePOS.db");
     }
 }
